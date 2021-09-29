@@ -1,39 +1,25 @@
-  <template>
+<template>
   <v-app>
-    <AppHeader/>
+    <v-app-bar app color="primary white--text">
+      <v-app-bar-title>
+        <span class="display-1">WebCode</span>
+        <v-divider insert vertical class="mx-1"></v-divider>
+        <span>Health++</span>
+      </v-app-bar-title>
+      <v-spacer></v-spacer>
+      <v-btn plain to="/home" color="white">Home</v-btn>
+      <v-btn plain to="/diagnostics" color="white">Diagnostics</v-btn>
+      <v-btn plain to="/about" color="white">About</v-btn>
+    </v-app-bar>
     <v-main>
-      <HelloWorld/>
-      <HelloWorld/>
-<!--      <app-register/>-->
-<!--      <app-login/>-->
-      <app-account-settings/>
+      <v-container fluid>
+        <router-view/>
+      </v-container>
     </v-main>
-    <AppFooter/>
   </v-app>
 </template>
 
-<!--  <template>-->
-<!--    <app-login></app-login>-->
-<!--  </template>-->
 
-<script>
-import HelloWorld from './components/HelloWorld';
-import AppHeader from "./layout/AppHeader";
-import AppFooter from './layout/AppFooter';
-import AppAccountSettings from "./components/common/account-settings/AccountSettings";
-// import AppLogin from "./views/pages/Login";
-// import AppRegister from "./views/pages/Register";
+<style>
 
-export default {
-  name: 'App',
-
-  components: {
-    AppAccountSettings,
-    // AppRegister,
-    // AppLogin,
-    HelloWorld,
-    AppHeader,
-    AppFooter,
-  },
-};
-</script>
+</style>

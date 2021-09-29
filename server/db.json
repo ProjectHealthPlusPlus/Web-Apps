@@ -1,0 +1,74 @@
+{
+  "patients": [
+    {
+      "id": 1,
+      "name": "Jason J",
+      "age": 19,
+      "address": "NoWhere"
+    },
+    {
+      "id": 2,
+      "name": "Jonh Weak",
+      "age": 42,
+      "address": "Unknown"
+    },
+    {
+      "id": 3,
+      "name": "William Will",
+      "age": 24,
+      "address": "One Place"
+    }
+  ],
+
+  "doctors": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "age": 30,
+      "address": "NoWhere"
+    },
+    {
+      "id": 2,
+      "name": "Jason Bourne",
+      "age": 36,
+      "address": "Unknown"
+    },
+    {
+      "id": 3,
+      "name": "William Norton",
+      "age": 42,
+      "address": "One Place"
+    }
+  ],
+
+  "diagnostics": [
+    {
+      "id": 1,
+      "patientId": 1,
+      "description": "Is healthy",
+      "status": "Sent",
+      "doctorId": 2
+    },
+    {
+      "id": 2,
+      "patientId": 1,
+      "description": "has the flu, needs rest",
+      "status": "Pending",
+      "doctorId": 3
+    },
+    {
+      "id": 3,
+      "patientId": 2,
+      "description": "Have a fever, need paracetamol",
+      "status": "Sent",
+      "doctorId": 2
+    },
+    {
+      "id": 4,
+      "patientId": 3,
+      "description": "Have a some fever, needs rest",
+      "status": "Sent",
+      "doctorId": 1
+    }
+  ]
+}
