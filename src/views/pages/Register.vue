@@ -1,102 +1,104 @@
 <template>
-  <div class="auth-wrapper auth-v1">
-    <div class="auth-inner">
-      <v-card class="auth-card">
+  <v-container class="v-responsive" style="justify-content: center">
+    <div class="auth-wrapper auth-v1">
+      <div class="auth-inner">
+        <v-card class="auth-card">
 
-        <!-- title -->
-        <v-card-text>
-          <p class="text-2xl font-weight-semibold text--primary mb-2">
-            Adventure starts here with Heatlh++ 🚀
-          </p>
-          <p class="mb-2">
-            Keep yourself healthy!!!
-          </p>
-        </v-card-text>
+          <!-- title -->
+          <v-card-text>
+            <p class="text-2xl font-weight-semibold text--primary mb-2">
+              Adventure starts here with Heatlh++ 🚀
+            </p>
+            <p class="mb-2">
+              Keep yourself healthy!!!
+            </p>
+          </v-card-text>
 
-        <!-- login form -->
-        <v-card-text>
-          <v-form>
-            <v-text-field
-                v-model="username"
-                outlined
-                label="Username"
-                placeholder="JohnDoe"
-                hide-details
-                class="mb-3"
-            ></v-text-field>
+          <!-- login form -->
+          <v-card-text>
+            <v-form>
+              <v-text-field
+                  v-model="username"
+                  outlined
+                  label="Username"
+                  placeholder="JohnDoe"
+                  hide-details
+                  class="mb-3"
+              ></v-text-field>
 
-            <v-text-field
-                v-model="email"
-                outlined
-                label="Email"
-                placeholder="john@example.com"
-                hide-details
-                class="mb-3"
-            ></v-text-field>
+              <v-text-field
+                  v-model="email"
+                  outlined
+                  label="Email"
+                  placeholder="john@example.com"
+                  hide-details
+                  class="mb-3"
+              ></v-text-field>
 
-            <v-text-field
-                v-model="password"
-                outlined
-                :type="isPasswordVisible ? 'text' : 'password'"
-                label="Password"
-                placeholder="············"
-                hide-details
-                @click:append="isPasswordVisible = !isPasswordVisible"
-            ></v-text-field>
+              <v-text-field
+                  v-model="password"
+                  outlined
+                  :type="isPasswordVisible ? 'text' : 'password'"
+                  label="Password"
+                  placeholder="············"
+                  hide-details
+                  @click:append="isPasswordVisible = !isPasswordVisible"
+              ></v-text-field>
 
-            <v-checkbox
-                hide-details
-                class="mt-1"
-            >
-              <template #label>
-                <div class="d-flex align-center flex-wrap">
-                  <span class="me-2">I agree to</span><a href="javascript:void(0)">privacy policy &amp; terms</a>
-                </div>
-              </template>
-            </v-checkbox>
+              <v-checkbox
+                  hide-details
+                  class="mt-1"
+              >
+                <template #label>
+                  <div class="d-flex align-center flex-wrap">
+                    <span class="me-2">I agree to</span><a href="javascript:void(0)">privacy policy &amp; terms</a>
+                  </div>
+                </template>
+              </v-checkbox>
 
-            <v-btn
-                block
-                color="primary"
-                class="mt-6"
-            >
-              Sign Up
-            </v-btn>
-          </v-form>
-        </v-card-text>
+              <v-btn
+                  block
+                  color="primary"
+                  class="mt-6"
+              >
+                Sign Up
+              </v-btn>
+            </v-form>
+          </v-card-text>
 
-        <!-- create new account  -->
-        <v-card-text class="d-flex align-center justify-center flex-wrap mt-2">
+          <!-- create new account  -->
+          <v-card-text class="d-flex align-center justify-center flex-wrap mt-2">
           <span class="me-2">
             Already have an account?
           </span>
             Sign in instead
-        </v-card-text>
+          </v-card-text>
 
-        <!-- divider -->
-        <v-card-text class="d-flex align-center mt-2">
-          <v-divider></v-divider>
-          <span class="mx-5">or</span>
-          <v-divider></v-divider>
-        </v-card-text>
+          <!-- divider -->
+          <v-card-text class="d-flex align-center mt-2">
+            <v-divider></v-divider>
+            <span class="mx-5">or</span>
+            <v-divider></v-divider>
+          </v-card-text>
 
-        <!-- social link -->
-        <v-card-actions class="d-flex justify-center">
-          <v-btn
-              v-for="link in socialLink"
-              :key="link.icon"
-              icon
-              class="ms-1"
-          >
-            <v-icon :color="$vuetify.theme.dark ? link.colorInDark:link.color">
-              {{ link.icon }}
-            </v-icon>
-          </v-btn>
-        </v-card-actions>
-      </v-card>
+          <!-- social link -->
+          <v-card-actions class="d-flex justify-center">
+            <v-btn
+                v-for="link in socialLink"
+                :key="link.icon"
+                icon
+                class="ms-1"
+            >
+              <v-icon :color="$vuetify.theme.dark ? link.colorInDark:link.color">
+                {{ link.icon }}
+              </v-icon>
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </div>
+
     </div>
-
-  </div>
+  </v-container>
 </template>
 
 <script>

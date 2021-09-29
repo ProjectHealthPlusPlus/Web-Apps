@@ -1,39 +1,41 @@
 <template>
-  <v-card id="account-setting-card">
-    <!-- tabs -->
-    <v-tabs
-      v-model="tab"
-      show-arrows
-    >
-      <v-tab
-        v-for="tab in tabs"
-        :key="tab.icon"
+  <v-container>
+    <v-card id="account-setting-card">
+      <!-- tabs -->
+      <v-tabs
+          v-model="tab"
+          show-arrows
       >
-        <v-icon
-          size="20"
-          class="me-3"
+        <v-tab
+            v-for="tab in tabs"
+            :key="tab.icon"
         >
-          {{ tab.icon }}
-        </v-icon>
-        <span>{{ tab.title }}</span>
-      </v-tab>
-    </v-tabs>
+          <v-icon
+              size="20"
+              class="me-3"
+          >
+            {{ tab.icon }}
+          </v-icon>
+          <span>{{ tab.title }}</span>
+        </v-tab>
+      </v-tabs>
 
-    <!-- tabs item -->
-    <v-tabs-items v-model="tab">
-<!--      <v-tab-item>-->
-<!--        <account-settings-account :account-data="accountSettingData.account"></account-settings-account>-->
-<!--      </v-tab-item>-->
+      <!-- tabs item -->
+      <v-tabs-items v-model="tab">
+        <v-tab-item>
+          <account-settings-account :account-data="accountSettingData.account"></account-settings-account>
+        </v-tab-item>
 
-      <v-tab-item>
-        <account-settings-security></account-settings-security>
-      </v-tab-item>
+        <v-tab-item>
+          <account-settings-security></account-settings-security>
+        </v-tab-item>
 
-<!--      <v-tab-item>-->
-<!--        <account-settings-info :information-data="accountSettingData.information"></account-settings-info>-->
-<!--      </v-tab-item>-->
-    </v-tabs-items>
-  </v-card>
+        <v-tab-item>
+          <account-settings-info :information-data="accountSettingData.information"></account-settings-info>
+        </v-tab-item>
+      </v-tabs-items>
+    </v-card>
+  </v-container>
 </template>
 
 <script>
@@ -42,15 +44,15 @@ import { ref } from '@vue/composition-api'
 
 // demos
 // import AccountSettingsAccount from './AccountSettingsAccount.vue'
-import AccountSettingsSecurity from './AccountSettingsSecurity.vue'
-// import AccountSettingsInfo from './AccountSettingsInfo.vue'
+// import AccountSettingsSecurity from './AccountSettingsSecurity.vue'
+import AccountSettingsInfo from './AccountSettingsInfo.vue'
 
 export default {
   name:"AppAccountSettings",
   components: {
     // AccountSettingsAccount,
-    AccountSettingsSecurity,
-    // AccountSettingsInfo,
+    // AccountSettingsSecurity,
+    AccountSettingsInfo,
   },
   setup() {
     const tab = ref('')
