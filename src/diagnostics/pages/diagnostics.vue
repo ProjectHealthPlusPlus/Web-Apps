@@ -107,11 +107,9 @@ export default {
     close() {
       this.dialog = false;
     },
-
     closeDelete() {
       this.dialogDelete = false;
     },
-
     getDisplayDiagnostic(diagnostic) {
       return {
         id: diagnostic.id,
@@ -121,61 +119,50 @@ export default {
         doctorId: diagnostic.doctorId,
       };
     },
-
     retrieveDiagnostics() {
       DiagnosticsService.getAll()
-      .then((response) => {
-        this.diagnostics = response.data.map(this.getDisplayDiagnostic);
-      })
-      .catch(e => {
-        console.log(e);
-      });
+          .then((response) => {
+            this.diagnostics = response.data.map(this.getDisplayDiagnostic);
+          })
+          .catch(e => {
+            console.log(e);
+          });
     },
-
     refreshList() {
       this.retrieveDiagnostics();
     },
-
     editItem(item) {
       this.editedIndex = this.diagnostics.indexOf(item);
       this.editedItem = Object.assign({}, item);
       this.dialog = true;
     },
-
     deleteItem(item) {
       this.editedIndex = this.diagnostics.indexOf(item);
       this.editedItem = Object.assign({}, item);
       this.dialogDelete = true;
     },
-
     deleteItemConfirm() {
       // TODO: Delete Item
     },
-
     save() {
       // TODO: Create or Updete Item
       this.close();
     },
-
     deleteDiagnostic(id) {
       DiagnosticsService.delete(id)
-      .then(() => {
-        this.refreshList();
-      })
-      .catch(e => {
-        console.log(e);
-      });
+          .then(() => {
+            this.refreshList();
+          })
+          .catch(e => {
+            console.log(e);
+          });
     },
   },
-
   mounted() {
     this.retrieveDiagnostics();
   }
-
-
 }
 </script>
 
 <style scoped>
-
 </style>

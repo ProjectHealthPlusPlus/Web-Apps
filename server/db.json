@@ -46,28 +46,28 @@
       "id": 1,
       "patientId": 1,
       "description": "Is healthy",
-      "status": "Sent",
+      "published": true,
       "doctorId": 2
     },
     {
       "id": 2,
       "patientId": 1,
       "description": "has the flu, needs rest",
-      "status": "Pending",
+      "published": false,
       "doctorId": 3
     },
     {
       "id": 3,
       "patientId": 2,
       "description": "Have a fever, need paracetamol",
-      "status": "Sent",
+      "published": true,
       "doctorId": 2
     },
     {
       "id": 4,
       "patientId": 3,
       "description": "Have a some fever, needs rest",
-      "status": "Sent",
+      "published": true,
       "doctorId": 1
     }
   ]

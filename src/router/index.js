@@ -12,9 +12,34 @@ const routes = [
     component: Home
   },
   {
+    path: '/patients',
+    name: 'patients',
+    component: () => import('@/components/us_pacient/pacientPage')
+  },
+  {
     path: '/diagnostics',
     name: 'diagnostics',
     component: () => import('@/diagnostics/pages/diagnostics')
+  },
+  {
+    path: '/doctors',
+    name: 'doctors',
+    component: () => import('@/doctors/pages/doctors')
+  },
+  {
+    path: '/doctors/content',
+    name: 'doctors/content',
+    component: () => import('@/doctors/layout/content')
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/views/pages/Login')
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: () => import('@/views/pages/Register')
   },
   {
     path: '/about',

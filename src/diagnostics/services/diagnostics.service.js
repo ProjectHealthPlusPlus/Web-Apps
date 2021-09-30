@@ -26,7 +26,5 @@ class DiagnosticsService {
     findByPatientId(patientId) {
         return http.get(`${this.endPoint}?patientId=${patientId}`);
     }
-
 }
-
 export default new DiagnosticsService();
