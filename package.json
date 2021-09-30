@@ -1,0 +1,64 @@
+{
+  "name": "web-apps",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@dafcoe/vue-swappable-card": "^0.1.2",
+    "@mdi/js": "^6.1.95",
+    "@vue/composition-api": "^1.2.2",
+    "axios": "^0.21.4",
+    "core-js": "^3.6.5",
+    "date-fns": "^2.24.0",
+    "material-design-icons-iconfont": "^6.1.0",
+    "moment": "^2.29.1",
+    "v-super-select": "^0.2.12",
+    "vue": "^2.6.11",
+    "vue-responsive-text": "^0.1.4",
+    "vue-router": "^3.5.2",
+    "vue-simple-alert": "^1.1.1",
+    "vue2-timepicker": "^1.1.6",
+    "vuejs-datepicker": "^1.6.2",
+    "vuetify": "^2.4.0"
+  },
+  "devDependencies": {
+    "@mdi/font": "^6.1.95",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "^4.5.13",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "material-design-icons-iconfont": "^6.1.0",
+    "sass": "~1.32.0",
+    "sass-loader": "^10.0.0",
+    "vue-cli-plugin-vuetify": "~2.4.2",
+    "vue-responsive-components": "^0.2.3",
+    "vue-template-compiler": "^2.6.11",
+    "vuetify-loader": "^1.7.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
