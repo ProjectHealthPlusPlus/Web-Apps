@@ -25,7 +25,7 @@
                     <v-container>
                       <v-row>
                         <v-col cols="12" sm="6" md="4" lg="12">
-                          <v-text-field v-model="editedItem.description" label="Diagnostic Description"></v-text-field>
+                          <v-text-field v-model="editedItem.description" label="Diagnostic Description"/>
                         </v-col>
                         <v-col cols="12" sm="6" md="4" lg="12">
                           <v-text-field :items="diagnosticStatus" v-model="editedItem.status" label="Current Status"></v-text-field>

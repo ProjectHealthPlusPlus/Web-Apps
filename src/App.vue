@@ -13,7 +13,7 @@
     </v-app-bar>
     <v-main>
       <v-container fluid>
-        <router-view/>
+       <pacient-page/>
       </v-container>
     </v-main>
   </v-app>
@@ -23,3 +23,10 @@
 <style>
 
 </style>
+<script>
+import pacientPage from "./components/us_pacient/pacientPage";
+
+export default {
+  components: {pacientPage},
+}
+</script>
