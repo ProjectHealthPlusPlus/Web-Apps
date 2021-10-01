@@ -27,6 +27,16 @@ const routes = [
     component: () => import('@/doctors/pages/doctors')
   },
   {
+    path: '/doctorsCalendar',
+    name: 'doctorsCalendar',
+    component: () => import('@/doctors/pages/doctorsCalendar')
+  },
+  {
+    path: '/doctorsMessages',
+    name: 'doctorsMessages',
+    component: () => import('@/doctors/pages/doctorsMessages')
+  },
+  {
     path: '/doctors/content',
     name: 'doctors/content',
     component: () => import('@/doctors/layout/content')

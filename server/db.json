@@ -70,5 +70,48 @@
       "published": true,
       "doctorId": 1
     }
+  ],
+
+  "messages": [
+    {
+      "id": 1,
+      "title": "How",
+      "description": "How are you?",
+      "patientName": "Jason J",
+      "patientId": 1,
+      "doctorId": 2
+    },
+    {
+      "id": 2,
+      "title": "What",
+      "description": "What do I have?",
+      "patientName": "Jonh Weak",
+      "patientId": 2,
+      "doctorId": 1
+    },
+    {
+      "id": 3,
+      "title": "When",
+      "description": "When do you have time?",
+      "patientName": "William Will",
+      "patientId": 3,
+      "doctorId": 1
+    },
+    {
+      "id": 4,
+      "title": "What",
+      "description": "How are you?",
+      "patientName": "Jason J",
+      "patientId": 1,
+      "doctorId": 3
+    },
+    {
+      "id": 5,
+      "title": "Session",
+      "description": "Reschedule appointment",
+      "patientName": "Jason J",
+      "patientId": 1,
+      "doctorId": 2
+    }
   ]
 }
