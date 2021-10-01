@@ -11,10 +11,15 @@
                 <div class="grey--text">{{ person.role }}</div>
               </v-card-text>
               <v-card-actions>
-                <v-btn flat color="grey">
-                  <v-icon small left>message</v-icon>
-                  <span class="">Message</span>
+                <v-btn flat color="primary">
+                  <v-icon small left>assignment</v-icon>
+                  <h3>Details</h3>
                 </v-btn>
+                <v-spacer></v-spacer>
+                <v-btn flat color="primary" disabled>
+                <v-icon small left>video_camera_back</v-icon>
+                <h2>Join</h2>
+              </v-btn>
               </v-card-actions>
             </v-card>
           </v-flex>
