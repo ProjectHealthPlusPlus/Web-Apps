@@ -29,7 +29,11 @@
     <!--catalogo de medicos-->
 
     <v-container class="catalogoMedicos">
-      <v-card max-width="150%" >
+      
+      <v-card max-width="100%" size="100px">
+        <v-card-title class="text-h3 my-5 title justify-center">
+          Our best doctors
+        </v-card-title>
 
         <v-carousel progress-color="green">
           <v-carousel-item
@@ -42,71 +46,6 @@
         </v-carousel>
       </v-card>
     </v-container>
-
-    <!--Creador de eventos-->
-    <v-row align="center" class="px-4 mx-auto">
-     
-      <v-col cols="12" sm="12">
-        <v-card class="mx-auto" title>
-          <v-data-table :headers="headers" :items="tutorials"  :search="title" sort-by="title">
-            <template v-slot:top>
-              <v-toolbar flat>
-                <v-toolbar-title>Events</v-toolbar-title>
-                <v-divider class="mx-4" inset vertical></v-divider>
-                <v-spacer></v-spacer>
-                <v-dialog v-model="dialog" max-width="500px">
-                  <template v-slot: activator="{}">
-                    <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on">New event</v-btn>
-                  </template>
-                  <v-card>
-                    <v-card-title>{{ formTitle }}</v-card-title>
-                    <v-card-text>
-                       <v-container>
-                         <v-row>
-                           <v-col cols="12" sm="6" md="4" lg="12" >
-                             <v-text-field v-model="edited.Item.title" label="Event title"></v-text-field>
-                           </v-col>
-                           <v-col cols="12" sm="6" md="4" lg="12">
-                             <v-select :items="eventStatus" v-model="editedItem.status" label="Current Status"></v-select>
-                           </v-col>
-                         </v-row>
-                       </v-container>
-                    </v-card-text>
-                    <v-card-actions>
-                      <v-spacer></v-spacer>
-                      <v-btn color="primary" @click="save">Save</v-btn>
-                      <v--btn color="primary" text @click="close">Cancel</v--btn>
-                    </v-card-actions>
-                  </v-card>
-                </v-dialog>
-                <v-dialog v-model="dialogDelete" max-width="500px">
-                  <v-card>
-                    <v-card-title>Delet Item</v-card-title>
-                    <v-card-text>Are you sure you want to delete this item?</v-card-text>
-                    <v-card-actions>
-                      <v-spacer></v-spacer>
-                      <v-btn color="primary" text @click="closeDelete">Cancel</v-btn>
-                      <v-btn color="primary" @click="deleteItemConfirm">Delete</v-btn>
-                    </v-card-actions>
-                  </v-card>
-                </v-dialog>
-              </v-toolbar>
-            </template>
-            <!--ACTIONS-->
-            <template v-slot:item.actions="{item}">
-              <v-icon small class ="mr-2" @click="editItem(item)">mdi-pencil</v-icon>
-              <v-icon small @click="deleteItem(item)">mdi-delete</v-icon>
-            </template>
-
-            <template v-slot:no-data>
-              <v-btn color="primary" @click="retrieveEvents">Reset</v-btn>
-            </template>
-          </v-data-table>
-        </v-card>
-
-      </v-col>
-
-    </v-row>
 
 
     <!--calendario citas-->
@@ -157,7 +96,21 @@ export default {
   data() {
     return {
       today: '2021-10-20',
-      events: []
+      events: [],
+      items: [
+        {
+          src: 'https://ichef.bbci.co.uk/news/640/amz/worldservice/live/assets/images/2014/07/07/140707150133_doctor_tests_624x351_thinkstock.jpg',
+        },
+        {
+          src: 'https://images.ecestaticos.com/w_Dh6K-JVt3o2CB0uPNdDaFwoG8=/0x70:1716x1040/972x547/filters:fill(white):format(jpg)/https://f.elconfidencial.com/original/8db/8b6/aa5/8db8b6aa54b585253e15f79a68447aeb.jpg',
+        },
+        {
+          src: 'https://media.revistagq.com/photos/5ca5fd6e3492a940f5bf1bf0/master/pass/doctor_mike_gq_5080.jpg',
+        },
+        {
+          src: 'https://cnnespanol.cnn.com/wp-content/uploads/2014/10/141013123220-female-doctor-google-story-top.jpg?quality=100&strip=info&w=460&h=260&crop=1',
+        },
+      ],
     };
   },
   async created(){
@@ -171,10 +124,6 @@ export default {
   }
 }
 </script>
-
-
-
-
 
 
 <style scoped>
