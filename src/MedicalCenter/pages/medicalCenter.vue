@@ -151,39 +151,28 @@
 
 
 <script>
-import EventService from '../Services/medicalCenter'
+import axios from 'axios'
 export default {
-  name: "events",
-  data: () => ({
-    events: [],
-    title: '',
-    
-  })
+  name: "medicalCenter",
+  data() {
+    return {
+      today: '2021-10-20',
+      events: []
+    };
+  },
+  async created(){
+    try{
+      const res = await axios.get(`http://localhost:3000/events`)
+
+      this.events = res.data;
+    } catch (e){
+      console.error(e);
+    }
+  }
 }
 </script>
 
-<script>
-export default {
-  data () {
-    return {
-      items: [
-        {
-          src: 'https://ichef.bbci.co.uk/news/640/amz/worldservice/live/assets/images/2014/07/07/140707150133_doctor_tests_624x351_thinkstock.jpg',
-        },
-        {
-          src: 'https://images.ecestaticos.com/w_Dh6K-JVt3o2CB0uPNdDaFwoG8=/0x70:1716x1040/972x547/filters:fill(white):format(jpg)/https://f.elconfidencial.com/original/8db/8b6/aa5/8db8b6aa54b585253e15f79a68447aeb.jpg',
-        },
-        {
-          src: 'https://media.revistagq.com/photos/5ca5fd6e3492a940f5bf1bf0/master/pass/doctor_mike_gq_5080.jpg',
-        },
-        {
-          src: 'https://cnnespanol.cnn.com/wp-content/uploads/2014/10/141013123220-female-doctor-google-story-top.jpg?quality=100&strip=info&w=460&h=260&crop=1',
-        },
-      ],
-    }
-  },
-}
-</script>
+
 
 
 
