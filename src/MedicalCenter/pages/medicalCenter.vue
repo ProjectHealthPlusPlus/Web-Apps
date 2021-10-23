@@ -29,7 +29,7 @@
     <!--catalogo de medicos-->
 
     <v-container class="catalogoMedicos">
-      <v-card max-width="150%">
+      <v-card max-width="150%" >
 
         <v-carousel progress-color="green">
           <v-carousel-item
@@ -45,12 +45,7 @@
 
     <!--Creador de eventos-->
     <v-row align="center" class="px-4 mx-auto">
-      <v-col cols="12" md="4" ><h2>Event administrator</h2></v-col>
-      <v-col cols="12" md="8">
-        <v-spacer> </v-spacer>
-        <v-text-field v-model="title" append-icon="mdi-magnify" label="Search event by name"
-        single-line ></v-text-field>
-      </v-col>
+     
       <v-col cols="12" sm="12">
         <v-card class="mx-auto" title>
           <v-data-table :headers="headers" :items="tutorials"  :search="title" sort-by="title">
@@ -122,40 +117,29 @@
           Medical calendar
         </v-card-title>
 
-        <v-sheet
-            tile
-            height="54"
-            class="d-flex"
-        >
-          <v-btn
-              icon
-              class="ma-2"
-              @click="$refs.calendar.prev()"
-          >
-            <v-icon>mdi-chevron-left</v-icon>
-          </v-btn>
-          <v-spacer></v-spacer>
-          <v-btn
-              icon
-              class="ma-2"
-              @click="$refs.calendar.next()"
-          >
-            <v-icon>mdi-chevron-right</v-icon>
-          </v-btn>
-        </v-sheet>
-        <v-sheet height="600">
-          <v-calendar
-              ref="calendar"
-              v-model="value"
-              :weekdays="weekday"
-              :type="type"
-              :events="events"
-              :event-overlap-mode="mode"
-              :event-overlap-threshold="30"
-              :event-color="getEventColor"
-              @change="getEvents"
-          ></v-calendar>
-        </v-sheet>
+          <v-col cols="12" md="4" ><h2>Event administrator</h2></v-col>
+          <v-col cols="12" md="8">
+            <v-spacer> </v-spacer>
+            <v-text-field v-model="title" append-icon="mdi-magnify" label="Search event by name"
+            single-line ></v-text-field>
+          </v-col>
+
+        <v-row>
+          <v-col>
+            <v-sheet height="400">
+              <v-calendar
+                ref="calendar"
+                :now="today"
+                :value="today"
+                :events="events"
+                color="primary"
+                type="week"
+              ></v-calendar>
+            </v-sheet>
+          </v-col>
+        </v-row>
+
+        
       </div>
     </v-container>
 
@@ -169,8 +153,12 @@
 <script>
 import EventService from '../Services/medicalCenter'
 export default {
-  name: "medicalCenter"
-  
+  name: "events",
+  data: () => ({
+    events: [],
+    title: '',
+    
+  })
 }
 </script>
 

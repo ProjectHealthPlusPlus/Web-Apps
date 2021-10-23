@@ -1,6 +1,6 @@
 import http from '@/core/http-common'
 
-class EventService {
+class EventsService {
 
     endPoint = '/events';
 
@@ -9,9 +9,8 @@ class EventService {
         return http.get(this.endPoint);
     }
 
-    getById(id)
-    {
-        return http.get(url: `${this.endPoint}/${id}`);
+    getById(id) {
+        return http.get(`${this.endPoint}/${id}`);
     }
 
     create(createEventDto){
@@ -20,18 +19,18 @@ class EventService {
 
     update(id, updateEventDto)
     {
-        return http.put(url: `${this.endPint}/${id}`,updateEventDto);
+        return http.put(`${this.endPoint}/${id}`,updateEventDto);
     }
 
     delete(id)
     {
-        return http.delete(url: `${this.endPoint}/${id}`);
+        return http.delete(`${this.endPoint}/${id}`);
     }
 
     findByTittle(tittle){
-        return http.get(url: `${this.endPoint}?tittle=${tittle}`);
+        return http.get(`${this.endPoint}?tittle=${tittle}`);
     }
 
 }
 
-export default new EventService();
+export default new EventsService();
