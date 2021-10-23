@@ -167,13 +167,11 @@
 
 
 <script>
+import EventService from '../Services/medicalCenter'
 export default {
   name: "medicalCenter"
+  
 }
-</script>
-
-<script>
-
 </script>
 
 <script>

@@ -1,27 +1,33 @@
 import http from '@/core/http-common'
 
 class EventService {
-    endPoint = '/events'
+
+    endPoint = '/events';
 
     getAll()
     {
         return http.get(this.endPoint);
     }
 
-    getById()
+    getById(id)
     {
-        return http.get(url: `${this.endPoint}/#{id}`);
+        return http.get(url: `${this.endPoint}/${id}`);
     }
+
     create(createEventDto){
-        return http.post(this.endPint, createEventDto);
+        return http.post(this.endPoint, createEventDto);
     }
-    update(id, updateEventDto){
+
+    update(id, updateEventDto)
+    {
         return http.put(url: `${this.endPint}/${id}`,updateEventDto);
     }
 
-    delete(id){
+    delete(id)
+    {
         return http.delete(url: `${this.endPoint}/${id}`);
     }
+
     findByTittle(tittle){
         return http.get(url: `${this.endPoint}?tittle=${tittle}`);
     }
