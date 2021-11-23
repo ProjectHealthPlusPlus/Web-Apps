@@ -1,0 +1,117 @@
+{
+  "patients": [
+    {
+      "id": 1,
+      "name": "Jason J",
+      "age": 19,
+      "address": "NoWhere"
+    },
+    {
+      "id": 2,
+      "name": "Jonh Weak",
+      "age": 42,
+      "address": "Unknown"
+    },
+    {
+      "id": 3,
+      "name": "William Will",
+      "age": 24,
+      "address": "One Place"
+    }
+  ],
+
+  "doctors": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "age": 30,
+      "address": "NoWhere"
+    },
+    {
+      "id": 2,
+      "name": "Jason Bourne",
+      "age": 36,
+      "address": "Unknown"
+    },
+    {
+      "id": 3,
+      "name": "William Norton",
+      "age": 42,
+      "address": "One Place"
+    }
+  ],
+
+  "diagnostics": [
+    {
+      "id": 1,
+      "patientId": 1,
+      "description": "Is healthy",
+      "published": true,
+      "doctorId": 2
+    },
+    {
+      "id": 2,
+      "patientId": 1,
+      "description": "has the flu, needs rest",
+      "published": false,
+      "doctorId": 3
+    },
+    {
+      "id": 3,
+      "patientId": 2,
+      "description": "Have a fever, need paracetamol",
+      "published": true,
+      "doctorId": 2
+    },
+    {
+      "id": 4,
+      "patientId": 3,
+      "description": "Have a some fever, needs rest",
+      "published": true,
+      "doctorId": 1
+    }
+  ],
+
+  "messages": [
+    {
+      "id": 1,
+      "title": "How",
+      "description": "How are you?",
+      "patientName": "Jason J",
+      "patientId": 1,
+      "doctorId": 2
+    },
+    {
+      "id": 2,
+      "title": "What",
+      "description": "What do I have?",
+      "patientName": "Jonh Weak",
+      "patientId": 2,
+      "doctorId": 1
+    },
+    {
+      "id": 3,
+      "title": "When",
+      "description": "When do you have time?",
+      "patientName": "William Will",
+      "patientId": 3,
+      "doctorId": 1
+    },
+    {
+      "id": 4,
+      "title": "What",
+      "description": "How are you?",
+      "patientName": "Jason J",
+      "patientId": 1,
+      "doctorId": 3
+    },
+    {
+      "id": 5,
+      "title": "Session",
+      "description": "Reschedule appointment",
+      "patientName": "Jason J",
+      "patientId": 1,
+      "doctorId": 2
+    }
+  ]
+}
