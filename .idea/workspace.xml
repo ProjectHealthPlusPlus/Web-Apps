@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62c7877f-1eb0-4e7e-b94a-4d46f9c6fa95" name="Default Changelist" comment="" />
+    <list default="true" id="62c7877f-1eb0-4e7e-b94a-4d46f9c6fa95" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/doctors/layout/content.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/doctors/layout/content.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/doctors/pages/doctors.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/doctors/pages/doctors.vue" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +41,8 @@
       <option name="presentableId" value="Default" />
       <updated>1637646827960</updated>
       <workItem from="1637646830891" duration="2117000" />
+      <workItem from="1637690034022" duration="919000" />
+      <workItem from="1637698794461" duration="7104000" />
     </task>
     <servers />
   </component>
@@ -43,9 +50,13 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="585" y="97" key="CommitChangelistDialog2" timestamp="1637650076505">
+    <state x="585" y="97" key="CommitChangelistDialog2" timestamp="1637719158479">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="97" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1637650076505" />
+    <state x="585" y="97" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1637719158479" />
+    <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1637706336581">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1637706336581" />
   </component>
 </project>
