@@ -1,3 +1,4 @@
+
 tall
 <template>
   <v-row>
@@ -22,6 +23,7 @@ tall
               height="200px"
           >
             <v-card-title v-text="card.title"></v-card-title>
+
             <v-card-subtitle v-text="card.subtitle"></v-card-subtitle>
           </v-img>
 
@@ -85,8 +87,9 @@ tall
 
 
 <script>
+
 import DoctorsMessageService from '../services/doctorsMessages.service'
-//import DiagnosticsService from "../../diagnostics/services/diagnostics.service";
+
 export default {
   name: "doctors",
 
@@ -165,6 +168,7 @@ export default {
 
 
 <style scoped>
+
 .v-card--reveal {
   bottom: 0;
   opacity: 1 !important;

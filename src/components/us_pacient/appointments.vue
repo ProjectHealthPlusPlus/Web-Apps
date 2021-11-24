@@ -33,6 +33,7 @@
         <v-text-field v-model="doctor" label="Doctor (Optional)" type="Doctor (Optional)" placeholder="Doctor (Optional)"></v-text-field>
       </v-col>
 
+
       <v-card-actions>
         <v-btn color="primary" @click="snackbar = true; popup = false">
           Book
@@ -63,7 +64,6 @@ import { format, parseISO } from 'date-fns'
 
 export default {
   data: () => ({
-
     date: format(parseISO(new Date().toISOString()), 'yyyy-MM-dd'),
     menu1: false,
     menu2: false,
@@ -74,12 +74,14 @@ export default {
     snackbar: false,
     text: 'You have booked an appointment!!!',
     timeout: 2000,
+
   }),
   computed: {
     computedDateFormattedMomentjs () {
       return this.date ? moment(this.date).format('dddd, MMMM Do YYYY') : ''
     },
   },
+
   watch:{
     dialog(val) {
       val || this.close();

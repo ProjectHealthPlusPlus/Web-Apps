@@ -16,6 +16,7 @@
       <v-btn plain to="/diagnostics" color="white">Diagnostics</v-btn>
       <v-btn plain to="/doctors" color="white">Doctors</v-btn>
       <v-btn plain to="/patients" color="white">Patients</v-btn>
+      <v-btn plain to="/MedicalCenter" color="white">Medical Center</v-btn>
       <v-btn plain to="/about" color="white">About</v-btn>
     </v-app-bar>
     <v-main>

@@ -20,6 +20,10 @@
                 <v-icon small left>video_camera_back</v-icon>
                 <h2>Join</h2>
               </v-btn>
+                <v-btn flat color="grey">
+                  <v-icon small left>message</v-icon>
+                  <span class="">Message</span>
+                </v-btn>
               </v-card-actions>
             </v-card>
           </v-flex>

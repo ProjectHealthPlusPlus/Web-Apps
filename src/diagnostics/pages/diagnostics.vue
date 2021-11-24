@@ -3,13 +3,20 @@
     <v-col cols="12" md="4"><h1>Diagnostics</h1></v-col>
     <v-col cols="12" md="8">
       <v-spacer></v-spacer>
+
       <v-text-field v-model="patientId" append-icon="mdi-magnify"
+      <v-text-field v-model="title" append-icon="mdi-magnify"
                     label="Search by Patient Id"
                     single-line hide-details></v-text-field>
     </v-col>
     <v-col cols="12" sm="12">
+
       <v-card class="mx-auto" patientId>
         <v-data-table :headers="headers" :items="diagnostics" :search="patientId" sort-by="id">
+
+      <v-card class="mx-auto" title>
+        <v-data-table :headers="headers" :items="diagnostics" :search="title" sort-by="title">
+
           <template v-slot:top>
             <v-toolbar flat>
               <v-toolbar-title>Diagnostics List</v-toolbar-title>
@@ -35,6 +42,12 @@
                         </v-col>
                         <v-col cols="12" sm="6" md="4" lg="12">
                           <v-select :items="diagnosticStatus" v-model="editedItem.status" label="Current Status"></v-select>
+
+                          <v-text-field v-model="editedItem.description" label="Diagnostic Description"/>
+                        </v-col>
+                        <v-col cols="12" sm="6" md="4" lg="12">
+                          <v-text-field :items="diagnosticStatus" v-model="editedItem.status" label="Current Status"></v-text-field>
+
                         </v-col>
                       </v-row>
                     </v-container>
@@ -63,6 +76,8 @@
           <!-- Item Actions Section -->
           <template v-slot:item.actions="{ item }">
             <v-icon small class="mr-2" @click="editItem(item)">mdi-pencil</v-icon>
+
+            <v-icon small class="mr-2" @click="editedItem(item)">mdi-pencil</v-icon>
             <v-icon small @click="deleteItem(item)">mdi-delete</v-icon>
           </template>
           <!-- No Data Scenario -->
@@ -81,6 +96,7 @@ export default {
   name: "diagnostics",
   data: () => ({
     diagnostics: [],
+
     patientId: '',
     headers: [
       {text: 'Id',          value: 'id',          sortable: true, align: 'end'},
@@ -88,13 +104,26 @@ export default {
       {text: 'Description', value: 'description', sortable: false},
       {text: 'Status',      value: 'status',      sortable: false},
       {text: 'Doctor Id',    value: 'doctorId',    sortable: true},
+    title: '',
+    headers: [
+      {text: 'Id',          value: 'id',          sortable: true, align: 'end'},
+      {text: 'PatientId',   value: 'patientId',   sortable: true, align: 'start'},
+      {text: 'Description', value: 'description', sortable: false},
+      {text: 'Status',      value: 'status',      sortable: false},
+      {text: 'DoctorId',    value: 'doctorId',    sortable: true},
+
       {text: 'Actions',     value: 'actions',     sortable: false}
     ],
     dialog: false,
     dialogDelete: false,
     editedIndex: -1,
+
     editedItem: {id: 0, patientId: 0, description: '', status: '', doctorId: 0},
     diagnosticStatus: ['Published', 'Pending']
+
+    editedItem: {id: 0, patientId: 1, description: '', status: '', doctorId: 2},
+    diagnosticStatus: ['Sent', 'Pending']
+
   }),
   computed: {
     formTitle() {
@@ -121,7 +150,10 @@ export default {
         id: diagnostic.id,
         patientId: diagnostic.patientId,
         description: diagnostic.description,
+
         status: diagnostic.published ? 'Published' : 'Pending',
+        status: diagnostic.sent ? 'Sent' : 'Pending',
+
         doctorId: diagnostic.doctorId,
       };
     },
@@ -149,10 +181,10 @@ export default {
     },
     deleteItemConfirm() {
       // TODO: Delete Item
+
       this.deleteDiagnostic(this.editedItem.id).then(() => this.refreshList()).catch(e => console.log(e));
     },
     save() {
-      // TODO: Create or Updete Item
       let item = this.editedItem;
       let dto = { patientId: item.patientId, doctorId: item.doctorId, description: item.description, publishe: item.status === 'Published'};
       if (this.editedIndex >-1) {
@@ -163,8 +195,13 @@ export default {
     },
     deleteDiagnostic(id) {
       DiagnosticsService.delete(id)
-          .then(() => this.refreshList())
-          .catch(e => console.log(e));
+
+          .then(() => {
+            this.refreshList();
+          })
+          .catch(e => {
+            console.log(e);
+          });
     },
   },
   mounted() {

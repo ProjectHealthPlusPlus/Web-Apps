@@ -27,6 +27,7 @@
               </v-dialog>
             </v-card>
           </v-hover>
+
       </v-col>
     </v-row>
 
@@ -52,7 +53,6 @@
     </v-row>
 
 
-
     <v-card class="d-flex justify-space-between mb-6" :color="$vuetify.theme.dark ? 'grey darken-3' : 'white'" flat>
       <div></div>
 <!--      Patron de centrado definitivo-->
@@ -61,7 +61,6 @@
       </v-card>
       <div></div>
     </v-card>
-
   </v-card>
 </template>
 

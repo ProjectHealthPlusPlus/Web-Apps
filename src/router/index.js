@@ -42,6 +42,12 @@ const routes = [
     component: () => import('@/doctors/layout/content')
   },
   {
+
+    path: '/MedicalCenter',
+    name: 'MedicalCenter',
+    component: () => import('@/MedicalCenter/pages/medicalCenter')
+  },
+  {
     path: '/login',
     name: 'login',
     component: () => import('@/views/pages/Login')
